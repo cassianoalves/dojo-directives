@@ -3,9 +3,11 @@
   <div class="col-md-6">
     <p>Farol</p>
     <input class=".col-md-4" ng-model="valorFarol">
+    <div class="fa fa-circle fa-4x text-success"></div>
   </div>
   <div class="col-md-6 text-center">
-    Directiva: {{ valorFarol }} <i class="fa fa-circle fa-4x"></i>
+    Directiva: {{ valorFarol }}
+    <div farol="valorFarol"></div>
   </div>
 </div>
 

@@ -12,7 +12,7 @@ angular.module('dojoDirectiveApp')
       template: '<div></div>',
       restrict: 'E',
       link: function postLink(scope, element, attrs) {
-        //element.text('this is the farol directive');
+        element.text('this is the farol directive');
       }
     };
   });

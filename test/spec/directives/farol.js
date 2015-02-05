@@ -13,8 +13,29 @@ describe('Directive: farol', function () {
   }));
 
   it('should make hidden element visible', inject(function ($compile) {
-    element = angular.element('<farol></farol>');
+    element = angular.element('<div farol="valor"></div>');
+    scope=10;
     element = $compile(element)(scope);
-    expect(element.text()).toBe('this is the farol directive');
+
+    console.log(element.html());
+    expect(element.html()).toEqual('<div class="fa fa-circle fa-4x text-danger"></div>')
+  }));
+
+  it('should make hidden element visible', inject(function ($compile) {
+    element = angular.element('<div farol="valor"></div>');
+    scope=50;
+    element = $compile(element)(scope);
+
+    console.log(element.html());
+    expect(element.html()).toEqual('<div class="fa fa-circle fa-4x text-warning"></div>')
+  }));
+
+  it('should make hidden element visible', inject(function ($compile) {
+    element = angular.element('<div farol="valor"></div>');
+    scope=90;
+    element = $compile(element)(scope);
+
+    console.log(element.html());
+    expect(element.html()).toEqual('<div class="fa fa-circle fa-4x text-success"></div>')
   }));
 });
