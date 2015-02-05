@@ -9,33 +9,34 @@ describe('Directive: farol', function () {
     scope;
 
   beforeEach(inject(function ($rootScope) {
-    scope = $rootScope.$new();
+    scope = $rootScope;
   }));
 
   it('should make hidden element visible', inject(function ($compile) {
     element = angular.element('<div farol="valor"></div>');
-    scope=10;
+    scope.valor=10;
     element = $compile(element)(scope);
+    scope.$digest();
 
-    console.log(element.html());
-    expect(element.html()).toEqual('<div class="fa fa-circle fa-4x text-danger"></div>')
+    expect(element.html()).toEqual('<div class="fa fa-circle fa-4x  text-danger"></div>');
   }));
 
   it('should make hidden element visible', inject(function ($compile) {
     element = angular.element('<div farol="valor"></div>');
-    scope=50;
+    scope.valor=50;
     element = $compile(element)(scope);
+    scope.$digest();
 
-    console.log(element.html());
-    expect(element.html()).toEqual('<div class="fa fa-circle fa-4x text-warning"></div>')
+    expect(element.html()).toEqual('<div class="fa fa-circle fa-4x  text-warning"></div>');
+
   }));
 
   it('should make hidden element visible', inject(function ($compile) {
     element = angular.element('<div farol="valor"></div>');
-    scope=90;
+    scope.valor=90;
     element = $compile(element)(scope);
+    scope.$digest();
 
-    console.log(element.html());
-    expect(element.html()).toEqual('<div class="fa fa-circle fa-4x text-success"></div>')
+    expect(element.html()).toEqual('<div class="fa fa-circle fa-4x  text-success"></div>');
   }));
 });
