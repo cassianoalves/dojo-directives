@@ -18,6 +18,7 @@ describe('Directive: farol', function () {
     element = $compile(element)(scope);
     scope.$digest();
 
+    console.log(element.html());
     expect(element.html()).toEqual('<div class="fa fa-circle fa-4x  text-danger"></div>');
   }));
 
